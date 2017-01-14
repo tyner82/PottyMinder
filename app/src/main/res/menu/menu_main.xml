@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.tynercontracting.pottyminder.MainActivity">
+
+    <item
+        android:id="@+id/do_log"
+        android:title="@string/do_log"
+        android:icon="@android:drawable/ic_menu_view" />
+    <item
+        android:id="@+id/do_mute"
+        android:title="@string/do_mute"
+        android:icon="@android:drawable/ic_lock_silent_mode"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/do_location"
+        android:title="@string/do_location"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        app:showAsAction="ifRoom|withText"
+        />
+
+    <item
+        android:id="@+id/do_settings"
+        android:title="@string/do_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="ifRoom|withText"
+        />
+
+    <item
+        android:id="@+id/do_about"
+        android:title="@string/do_about"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item
+        android:id="@+id/do_quit"
+        android:title="@string/do_quit"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:showAsAction="ifRoom|withText"
+        />
+
+</menu>
