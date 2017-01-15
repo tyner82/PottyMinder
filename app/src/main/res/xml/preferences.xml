@@ -4,54 +4,69 @@
     android:layout_height="match_parent">
 
     <PreferenceCategory
-        android:title="@string/pref_interval_title"
-        android:key="pref_key_interval_settings">
-
+        android:title="@string/pref_interval_title">
 
         <ListPreference android:title="@string/pref_interval_reg_title"
-            android:defaultValue="45">
 
-        </ListPreference>
+            android:key="pref_interval_reg"
+            android:dialogTitle="@string/pref_interval_reg_title"
+            android:entries="@array/pref_interval_reg_entries"
+            android:entryValues="@array/pref_interval_reg_entries"
+            android:defaultValue="@string/pref_interval_reg_default" />
+        />
+
 
         <ListPreference android:title="@string/pref_interval_skp_title"
-            android:defaultValue="10">
 
-        </ListPreference>
+            android:key="pref_interval_skp"
+            android:dialogTitle="@string/pref_interval_skp_title"
+            android:entries="@array/pref_interval_skp_entries"
+            android:entryValues="@array/pref_interval_skp_entries"
+            android:defaultValue="@string/pref_interval_skp_default" />
+            />
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/pref_gps_title"
-        android:key="pref_key_gps_settings">
+        android:title="@string/pref_gps_title">
+
         <SwitchPreference
             android:title="@string/pref_gps_sub_title"
             android:switchTextOn="@string/pref_gps_on_desc"
             android:summary="@string/pref_gps_summary"
-            android:switchTextOff="@string/pref_gps_off_desc">
+            android:switchTextOff="@string/pref_gps_off_desc"
+            android:key="pref_gps"
+            android:defaultValue="true"
+            android:persistent="false">
         </SwitchPreference>
     </PreferenceCategory>
 
 
     <PreferenceCategory
-        android:title="@string/pref_alarm_title"
-        android:key="pref_key_alarm_settings">
+        android:title="@string/pref_alarm_title">
 
         <SwitchPreference
+            android:key="pref_vibe"
             android:title="@string/pref_alarm_vibe"
             android:switchTextOn="@string/pref_vibe_on_desc"
             android:summary="@string/pref_vibe_summary"
-            android:switchTextOff="@string/pref_vibe_off_desc">
+            android:switchTextOff="@string/pref_vibe_off_desc"
+            android:defaultValue="true">
 
         </SwitchPreference>
 
-        <ListPreference android:title="@string/pref_alarm_ringtone_title">
+        <RingtonePreference
+            android:key="pref_ringtone"
+            android:title="@string/pref_alarm_ringtone_title"
+            android:ringtoneType="alarm">
 
-        </ListPreference>
+        </RingtonePreference>
 
         <SwitchPreference
+            android:key="pref_led"
             android:title="@string/pref_alarm_LED"
             android:switchTextOn="@string/pref_led_on_desc"
-            android:summaryOn="@string/pref_led_summary"
+            android:summary="@string/pref_led_summary"
             android:switchTextOff="@string/pref_led_off_desc">
 
         </SwitchPreference>
