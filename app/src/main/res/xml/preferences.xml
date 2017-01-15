@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <PreferenceCategory
+        android:title="@string/pref_interval_title"
+        android:key="pref_key_interval_settings">
+
+
+        <ListPreference android:title="@string/pref_interval_reg_title"
+            android:defaultValue="45">
+
+        </ListPreference>
+
+        <ListPreference android:title="@string/pref_interval_skp_title"
+            android:defaultValue="10">
+
+        </ListPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_gps_title"
+        android:key="pref_key_gps_settings">
+        <SwitchPreference
+            android:title="@string/pref_gps_sub_title"
+            android:switchTextOn="@string/pref_gps_on_desc"
+            android:summary="@string/pref_gps_summary"
+            android:switchTextOff="@string/pref_gps_off_desc">
+        </SwitchPreference>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="@string/pref_alarm_title"
+        android:key="pref_key_alarm_settings">
+
+        <SwitchPreference
+            android:title="@string/pref_alarm_vibe"
+            android:switchTextOn="@string/pref_vibe_on_desc"
+            android:summary="@string/pref_vibe_summary"
+            android:switchTextOff="@string/pref_vibe_off_desc">
+
+        </SwitchPreference>
+
+        <ListPreference android:title="@string/pref_alarm_ringtone_title">
+
+        </ListPreference>
+
+        <SwitchPreference
+            android:title="@string/pref_alarm_LED"
+            android:switchTextOn="@string/pref_led_on_desc"
+            android:summaryOn="@string/pref_led_summary"
+            android:switchTextOff="@string/pref_led_off_desc">
+
+        </SwitchPreference>
+
+    </PreferenceCategory>
+</PreferenceScreen>
