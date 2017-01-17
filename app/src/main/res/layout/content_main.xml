@@ -12,10 +12,13 @@
     tools:context="com.tynercontracting.pottyminder.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        tools:layout="@layout/fragment_content"
+        android:name="com.tynercontracting.pottyminder.fragments.ContentFragment"
+        android:id="@+id/content_fragment"
+        />
 
     <fragment
         android:layout_width="match_parent"

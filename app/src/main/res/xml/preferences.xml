@@ -67,7 +67,8 @@
             android:title="@string/pref_alarm_LED"
             android:switchTextOn="@string/pref_led_on_desc"
             android:summary="@string/pref_led_summary"
-            android:switchTextOff="@string/pref_led_off_desc">
+            android:switchTextOff="@string/pref_led_off_desc"
+            android:defaultValue="false">
 
         </SwitchPreference>
 

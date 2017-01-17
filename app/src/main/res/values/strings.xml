@@ -29,5 +29,13 @@
     <string name="pref_led_on_desc">LED is On</string>
     <string name="pref_led_summary">Toggle LED indicator</string>
     <string name="pref_led_off_desc">LED is Off</string>
+    
+    <string name="str_alarm_state">Potty Minder is Off</string>
+    <string name="str_skip_state">Reminder has been skipped, using shorter reminder until a Potty Break has been recorded</string>
+    <string name="str_next_alarm">Next alarm in 40:15</string>
+    <string name="str_last_break">Time since last Potty Break 10:20</string>
+    <string name="str_potty_button">Used Potty</string>
+    <string name="str_placeholder">placeholder</string>
+    <string name="str_potty_log_day">Day 1</string>
 
 </resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardview_dark_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_alarm_state"
+            android:text="@string/str_alarm_state"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:elevation="4dp"
+            android:background="@color/cardview_light_background"
+            android:scrollHorizontally="false"
+            android:layout_marginStart="@dimen/vertical_page_margin"
+            android:layout_marginBottom="@dimen/vertical_page_margin"
+            android:layout_marginEnd="@dimen/vertical_page_margin"
+            android:layout_marginTop="@dimen/vertical_page_margin"
+            android:padding="@dimen/margin_medium" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardview_dark_background">
+
+        <TextView
+            android:text="@string/str_skip_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_skip_state"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:background="@color/cardview_light_background"
+            android:layout_marginBottom="@dimen/vertical_page_margin"
+            android:layout_marginEnd="@dimen/vertical_page_margin"
+            android:layout_marginStart="@dimen/vertical_page_margin"
+            android:elevation="4dp"
+            android:visibility="visible"
+            android:padding="@dimen/margin_medium" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardview_dark_background">
+
+        <TextView
+            android:text="@string/str_next_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_next_alarm"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:padding="?android:attr/listPreferredItemPaddingStart"
+            android:background="@color/cardview_light_background"
+            android:layout_marginBottom="@dimen/vertical_page_margin"
+            android:layout_marginEnd="@dimen/vertical_page_margin"
+            android:layout_marginStart="@dimen/vertical_page_margin"
+            android:elevation="4dp"
+            android:visibility="visible" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardview_dark_background"
+        android:visibility="visible">
+
+        <TextView
+            android:text="@string/str_last_break"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_last_break"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:padding="?android:attr/listPreferredItemPaddingStart"
+            android:background="@color/cardview_light_background"
+            android:layout_marginBottom="@dimen/vertical_page_margin"
+            android:layout_marginStart="@dimen/vertical_page_margin"
+            android:layout_marginEnd="@dimen/vertical_page_margin"
+            android:elevation="4dp"
+            android:visibility="visible" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardview_dark_background"
+        android:layout_gravity="center_horizontal|center">
+
+        <Button
+            android:text="@string/str_potty_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_potty_button"
+            android:layout_margin="@dimen/vertical_page_margin"
+            android:padding="?android:attr/listPreferredItemPaddingStart"
+            android:visibility="visible" />
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
