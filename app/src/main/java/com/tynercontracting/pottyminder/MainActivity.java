@@ -1,6 +1,7 @@
 package com.tynercontracting.pottyminder;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 
@@ -27,6 +29,7 @@ import com.tynercontracting.pottyminder.common.logger.Log;
 import com.tynercontracting.pottyminder.common.logger.LogFragment;
 import com.tynercontracting.pottyminder.common.logger.LogWrapper;
 import com.tynercontracting.pottyminder.common.logger.MessageOnlyLogFilter;
+import com.tynercontracting.pottyminder.fragments.SettingsFragment;
 
 import android.widget.Toast;
 
@@ -48,12 +51,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
-
 
         if (getSupportFragmentManager().findFragmentByTag(FRAGTAG) == null) {
 /**
@@ -103,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 // off.  This is useful for situations such as alarm clocks.  Abuse of this flag is an
                 // efficient way to skyrocket the uninstall rate of an application, so use with care.
                 // For most situations, ELAPSED_REALTIME will suffice.
-                int alarmType = AlarmManager.ELAPSED_REALTIME;
-                final int SIXTY_SEC_MILLIS = 60000;
+                int alarmType = AlarmManager.ELAPSED_REALTIME_WAKEUP;
+                final int ONE_MIN_MILLIS = 60000;
                 final int FIFTEEN_SEC_MILLIS = 15000;
 
 
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 // The below code fires after 15 seconds, and repeats every 15 seconds.  This is very
                 // useful for demonstration purposes, but horrendous for production.  Don't be that dev.
                 alarmManager.setRepeating(alarmType, SystemClock.elapsedRealtime() + FIFTEEN_SEC_MILLIS,
-                        SIXTY_SEC_MILLIS, pendingIntent);
+                        ONE_MIN_MILLIS * pref_interval_reg, pendingIntent);
                 // END_INCLUDE (configure_alarm_manager);
                 Log.i("RepeatingAlarmFragment", "Alarm set.");
 
@@ -160,15 +162,18 @@ public class MainActivity extends AppCompatActivity {
             case R.id.do_settings:
                 Toast.makeText(this, "You have chosen the " + getResources().getString(R.string.do_settings) + " menu option",
                         Toast.LENGTH_SHORT).show();
+                getFragmentManager().beginTransaction()
+                        .replace(android.R.id.content, new SettingsFragment())
+                        .commit();
                 return true;
             case R.id.do_about:
                 Toast.makeText(this, "You have chosen the " + getResources().getString(R.string.do_about) + " menu option",
                         Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.do_quit:
+            /*case R.id.do_quit:
                 Toast.makeText(this, "You have chosen the " + getResources().getString(R.string.do_quit) + " menu option",
                         Toast.LENGTH_SHORT).show();
-                return true;
+                return true;*/
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -183,6 +188,14 @@ public class MainActivity extends AppCompatActivity {
             String title = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX);
             Uri ringtoneURI = manager.getRingtoneUri(cursor.getPosition());
             // Do something with the title and the URI of ringtone
+        }
+    }
+
+    public void listSettings() {
+        // Display the fragment as the main content.
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new SettingsFragment())
+                .commit();
         }
     }
 

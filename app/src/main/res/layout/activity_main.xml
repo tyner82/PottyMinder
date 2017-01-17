@@ -16,8 +16,6 @@
         android:background="?attr/colorPrimary"
         android:src="@android:drawable/ic_lock_idle_alarm" />
 
-    <include layout="@layout/content_main" />
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +30,8 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             android:layout_weight="1"
             android:theme="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
-
     </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
 
 </android.support.design.widget.CoordinatorLayout>
