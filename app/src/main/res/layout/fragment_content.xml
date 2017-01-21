@@ -64,8 +64,7 @@
             android:layout_marginBottom="@dimen/vertical_page_margin"
             android:layout_marginEnd="@dimen/vertical_page_margin"
             android:layout_marginStart="@dimen/vertical_page_margin"
-            android:elevation="4dp"
-            android:visibility="visible" />
+            android:elevation="4dp" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView

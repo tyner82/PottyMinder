@@ -10,8 +10,7 @@
     <item
         android:id="@+id/do_mute"
         android:title="@string/do_mute"
-        android:icon="@android:drawable/ic_lock_silent_mode"
-        app:showAsAction="always" />
+        android:icon="@android:drawable/ic_lock_silent_mode" />
     <item
         android:id="@+id/do_location"
         android:title="@string/do_location"
@@ -32,11 +31,11 @@
         android:icon="@android:drawable/ic_menu_info_details"
         app:showAsAction="ifRoom|withText"
         />
-    <item
+<!--    <item
         android:id="@+id/do_quit"
         android:title="@string/do_quit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         app:showAsAction="ifRoom|withText"
-        />
+        />-->
 
 </menu>
